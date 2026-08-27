@@ -1,0 +1,9 @@
+aiohttp
+fastapi
+playwright
+psutil
+python-dotenv
+python-socketio
+requests
+telethon
+uvicorn
