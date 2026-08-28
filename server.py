@@ -132,7 +132,7 @@ def load_config():
                     if default_key:
                         p_data["key"] = default_key
                 merged["omkar_keys"] = DEFAULT_CONFIG["omkar_keys"]
-                if "firebase_urls" not in merged:
+                if not merged.get("firebase_urls"):
                     merged["firebase_urls"] = DEFAULT_CONFIG["firebase_urls"]
                 return merged
         except:
@@ -2875,4 +2875,4 @@ async def process_chatgpt_login(sid, num_tabs):
 # ─── Main ─────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print("🚀 Jio Sniper Dashboard v2.0 — http://localhost:8000")
-    import os; uvicorn.run(sio_app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)), log_level="warning")
+    uvicorn.run(sio_app, host="0.0.0.0", port=8000, log_level="warning")
