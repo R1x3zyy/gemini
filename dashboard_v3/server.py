@@ -132,7 +132,7 @@ def load_config():
                     if default_key:
                         p_data["key"] = default_key
                 merged["omkar_keys"] = DEFAULT_CONFIG["omkar_keys"]
-                if "firebase_urls" not in merged:
+                if not merged.get("firebase_urls"):
                     merged["firebase_urls"] = DEFAULT_CONFIG["firebase_urls"]
                 return merged
         except:
